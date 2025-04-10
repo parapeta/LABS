@@ -35,10 +35,10 @@ sudo nano /etc/postgresql/15/main/postgresql.conf \
 
  
 ### 5) Управление сервисом 
-Проверяю статус сервера postgresql командой: sudo systemctl status postgresql \
+Проверяю статус сервера postgresql командой: sudo systemctl status postgresql 
 
-Перезагружаю сервис командой sudo systemctl restart postgresql \
-И добавляю автозапуск сервиса командой: sudo systemctl enable postgresql \
+Перезагружаю сервис командой sudo systemctl restart postgresql 
+И добавляю автозапуск сервиса командой: sudo systemctl enable postgresql 
 
 
 ### 6) Создание тестовой базы данных 
