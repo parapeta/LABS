@@ -4,6 +4,7 @@
 Запускаю виртуальную машину на VM Virtual Box c установленной на нее ОС Linux Debian,
 выполняю вход в root и с помощью команды: sudo apt-get update проверяю доступные пакеты,
 с помощью команды: sudo apt-get upgrade обновляю эти пакеты\
+<img width="890" alt="Снимок экрана 2025-04-10 в 02 31 01" src="https://github.com/user-attachments/assets/bf2ec7e5-378d-4812-9cb1-a8489cbe4fb4" />
 
 
 ### 2) Установка PostgreSQL
@@ -22,23 +23,22 @@ psql;
 1.	Может запускать и управлять процессами PostgreSQL. 
 2.	Может читать и записывать файлы в /var/lib/postgresql/ (где хранятся базы данных).
 3.	Может выполнять команды PostgreSQL (psql, pg_ctl, pg_dump и т. д.). Не имеет root-доступа и не может выполнять команды sudo.
+<img width="756" alt="Снимок экрана 2025-04-10 в 03 00 20" src="https://github.com/user-attachments/assets/ab7bbbfb-50c6-495e-a124-a4a3a7e1e46d" />
 
 ### 4) Первичная настройка конфигурационных файлов 
 sudo nano /etc/postgresql/15/main/postgresql.conf
 С помощью команды: sudo nano /etc/postgresql/15/main/postgresql.conf захожу в файл конфигурации postgresql.conf
 
-
 изменяю port = 5432 на 5433
+<img width="854" alt="Снимок экрана 2025-04-10 в 02 44 31" src="https://github.com/user-attachments/assets/d9d02748-a34d-48e6-a252-b8219acae806" />
 
 
-
+ 
 ### 5) Управление сервисом 
 Проверяю статус сервера postgresql командой: sudo systemctl status postgresql 
 
-
 Перезагружаю сервис командой sudo systemctl restart postgresql 
 И добавляю автозапуск сервиса командой: sudo systemctl enable postgresql 
-
 
 
 ### 6) Создание тестовой базы данных 
@@ -48,15 +48,14 @@ sudo nano /etc/postgresql/15/main/postgresql.conf
 
 ### 7) Знакомство со схемами 
 Создаю схему test_schema: CREATE SCHEMA bleg_schema; 
-Настраиваю полный доступ к схеме у пользователя alpopov: GRANT ALL ON SCHEMA test_schema ON alpopov.
-
+Настраиваю полный доступ к схеме у пользователя dbbleg: GRANT ALL ON SCHEMA test_schema TO Bleg_Olegovich.
+<img width="890" alt="Снимок экрана 2025-04-10 в 03 11 04" src="https://github.com/user-attachments/assets/78a35df9-116a-4718-85be-5fa678f55666" />
 
 ### 8) Использование утилиты psql для базовых операций 
-CREATE TABLE public.mytable (ID SERIAL PRIMARY KEY, Name VARCHAR (100)); - создание таблицы с двумя полями: id и Name 
-UPDATE public.tmyable SET Name = ’aoaoa’ WHERE id = 3; - изменение информации в таблице где id = 3 
-INSERT INTO public.metable VALUES (id = 1, Name = ‘aoaoao’), (id = 2, Name = ‘aoaoao’); - добавление новых полей в таблицу 
+CREATE TABLE public.mytable (ID SERIAL PRIMARY KEY, Name VARCHAR (100)); - создание таблицы с двумя полями: id и name 
+INSERT INTO public.metable VALUES (id = 1,‘ODIN’), (id = 2, DVA); - добавление новых полей в таблицу 
 SELECT * FROM public.mytable; - вывести все поля из таблицы mytable в схеме public 
-DELETE ALL FROM public.mytable WHERE id = 2 OR name = ‘aoaoao’; – удалить строки из таблицы mytable  в схеме public, где id = 2 или name = ‘aoaoao’
+DELETE ALL FROM public.mytable WHERE id = 2 OR name = ‘DVA’; – удалить строки из таблицы mytable  в схеме public, где id = 2 или name = ‘DVA’ 
 
 
 ### 9) Настройка локальных сетевых подключений
@@ -104,17 +103,18 @@ log_min_messages = warning - минимальный уровень сообще�
 log_statement – параметр, определяющий какие команды будут записываться в журнал логов
 sudo /etc/init.d/postgresql restart - перезапуск PostgreSQL
 
+cat /var/lib/postgresql/15/main/log/postgresql-2025-04-10_091916.log - вывод логов
+<img width="867" alt="Снимок экрана 2025-04-10 в 11 37 15" src="https://github.com/user-attachments/assets/0afddf2b-43cd-4ace-84a2-a716ca12ce2e" />
 
-log_directory 
 
 
 
 ### 11)  Назначение ролей и прав
-Назначение прав для limited_user1(от лица postgres): Grant select on public.mytable to limited_user2;\
-Вход в датабазу postgres: psql –h localhost –p 5433 –U limited_user1 –d postgres;\
-Создание роли и назначение ей прав: CREATE ROLE read_write_role;\
-GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.mytable TO read_write_role;\
-Наследование прав от олной роли к другой: GRANT read_write_role TO limited_user;\
+Назначение прав для limited_user1(от лица postgres): Grant select on public.mytable to limited_user2;
+Вход в датабазу postgres: psql –h localhost –p 5433 –U limited_user1 –d postgres;
+Создание роли и назначение ей прав: CREATE ROLE read_write_role;
+GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.mytable TO read_write_role;
+Наследование прав от олной роли к другой: GRANT read_write_role TO limited_user;
 Set role limited user;
 
 <img width="622" alt="Снимок экрана 2025-04-10 в 12 28 49" src="https://github.com/user-attachments/assets/67968617-b01e-44d7-9750-5889530b8f02" />
