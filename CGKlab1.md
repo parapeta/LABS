@@ -12,22 +12,22 @@
 
 
 ### 3) Создание служебной учётной записи
-С помощью команды: sudo -i -u postgres;\
-psql;\
-\du;\
- проверяю наличие учетной записи postgres в системе\
+С помощью команды: sudo -i -u postgres;
+psql;
+\du;
+ проверяю наличие учетной записи postgres в системе
 
 
 пользоваель postgres – в системе linux обычный системный пользователь
 Права:
-1.	Может запускать и управлять процессами PostgreSQL. \
-2.	Может читать и записывать файлы в /var/lib/postgresql/ (где хранятся базы данных).\
-3.	Может выполнять команды PostgreSQL (psql, pg_ctl, pg_dump и т. д.). Не имеет root-доступа и не может выполнять команды sudo.\
+1.	Может запускать и управлять процессами PostgreSQL. 
+2.	Может читать и записывать файлы в /var/lib/postgresql/ (где хранятся базы данных).
+3.	Может выполнять команды PostgreSQL (psql, pg_ctl, pg_dump и т. д.). Не имеет root-доступа и не может выполнять команды sudo.
 <img width="756" alt="Снимок экрана 2025-04-10 в 03 00 20" src="https://github.com/user-attachments/assets/ab7bbbfb-50c6-495e-a124-a4a3a7e1e46d" />
 
 ### 4) Первичная настройка конфигурационных файлов 
-sudo nano /etc/postgresql/15/main/postgresql.conf\
-С помощью команды: sudo nano /etc/postgresql/15/main/postgresql.conf захожу в файл конфигурации postgresql.conf\
+sudo nano /etc/postgresql/15/main/postgresql.conf \
+С помощью команды: sudo nano /etc/postgresql/15/main/postgresql.conf захожу в файл конфигурации postgresql.conf \
 
 изменяю port = 5432 на 5433\
 <img width="854" alt="Снимок экрана 2025-04-10 в 02 44 31" src="https://github.com/user-attachments/assets/d9d02748-a34d-48e6-a252-b8219acae806" />
