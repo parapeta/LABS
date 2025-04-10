@@ -43,7 +43,7 @@ sudo nano /etc/postgresql/15/main/postgresql.conf \
 
 ### 6) Создание тестовой базы данных 
 Захожу в psql от имени postgres и создаю пользователя командой create user Bleg_Olegovich \
-Также создаю базу данных: create db dbbleg\
+Также создаю базу данных: create db dbbleg
 
 
 ### 7) Знакомство со схемами 
