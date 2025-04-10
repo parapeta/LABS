@@ -1,7 +1,7 @@
 ## Отчет по лабораторной работе №1 
 
 ### 1) Подготовка среды 
-Запускаю виртуальную машину на VM Virtual Box c установленной на нее ОС Linux Debian,\
+Запускаю виртуальную машину на VM Virtual Box c установленной на нее ОС Linux Debian,
 выполняю вход в root и с помощью команды: sudo apt-get update проверяю доступные пакеты,
 с помощью команды: sudo apt-get upgrade обновляю эти пакеты\
 <img width="890" alt="Снимок экрана 2025-04-10 в 02 31 01" src="https://github.com/user-attachments/assets/bf2ec7e5-378d-4812-9cb1-a8489cbe4fb4" />
@@ -55,7 +55,7 @@ sudo nano /etc/postgresql/15/main/postgresql.conf \
 CREATE TABLE public.mytable (ID SERIAL PRIMARY KEY, Name VARCHAR (100)); - создание таблицы с двумя полями: id и name \
 INSERT INTO public.metable VALUES (id = 1,‘ODIN’), (id = 2, DVA); - добавление новых полей в таблицу \
 SELECT * FROM public.mytable; - вывести все поля из таблицы mytable в схеме public \
-DELETE ALL FROM public.mytable WHERE id = 2 OR name = ‘DVA’; – удалить строки из таблицы mytable  в схеме public, где id = 2 или name = ‘DVA’ \
+DELETE ALL FROM public.mytable WHERE id = 2 OR name = ‘DVA’; – удалить строки из таблицы mytable  в схеме public, где id = 2 или name = ‘DVA’ 
 
 
 ### 9) Настройка локальных сетевых подключений
@@ -87,7 +87,7 @@ pg_hba.conf:/
         - gss: GSSAPI\
         - sspi: SSPI (Windows)\
       6. [auth-options]:\
-        - Дополнительные опции для метода аутентификации.\
+        - Дополнительные опции для метода аутентификации.
 
 
 ### 10)  Журналирование (logging)
@@ -100,7 +100,7 @@ log_statement = 'all' - логировать все SQL-запросы\
 log_min_error_statement = error\
 log_min_messages = warning - минимальный уровень сообщений\
 log_statement – параметр, определяющий какие команды будут записываться в журнал логов\
-sudo /etc/init.d/postgresql restart - перезапуск PostgreSQL\
+sudo /etc/init.d/postgresql restart - перезапуск PostgreSQL
 
 cat /var/lib/postgresql/15/main/log/postgresql-2025-04-10_091916.log - вывод логов\
 <img width="867" alt="Снимок экрана 2025-04-10 в 11 37 15" src="https://github.com/user-attachments/assets/0afddf2b-43cd-4ace-84a2-a716ca12ce2e" />
