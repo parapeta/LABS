@@ -56,7 +56,7 @@
 
 <img width="1099" alt="Снимок экрана 2025-04-11 в 20 57 39" src="https://github.com/user-attachments/assets/ed4a6e00-1266-4b37-8b87-e76e3be424f6" />
 
-Сохраняем таблицу из схемы public в базе dbbleg:\
+Сохраняем таблицу из схемы public в базе dbbleg:
 
 pg_dump -U postgres -d dbbleg -n public -t mytable > mytable_dump.sql.
 
