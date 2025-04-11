@@ -36,6 +36,7 @@
 
 Выполняем бэкапы бд:
 
+<img width="690" alt="Снимок экрана 2025-04-11 в 20 36 59" src="https://github.com/user-attachments/assets/aa8ec31a-4cb2-403f-9ab0-9d5bfe5aad7a" />
 
 -Fc – кастомный формат PostgreSQL, позволяет выборочно восстанавливать объекты,\
 только схемы или данные например. Поддерживает восстановление с помощью pg_restore.
@@ -126,6 +127,9 @@ SELECT pg_terminate_backend(<pid>);
 ### 8) Логирование и анализ логов 
 
 Вывод системных логов:
+
+<img width="1013" alt="Снимок экрана 2025-04-11 в 22 03 56" src="https://github.com/user-attachments/assets/f33f307c-9716-4dee-b53c-deb1c05c8b15" />
+
 
 
 
