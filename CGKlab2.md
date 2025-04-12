@@ -123,9 +123,11 @@ COMMAND → Запущенная команда
 
 Просмотр активных процессов:
 
+<img width="594" alt="Снимок экрана 2025-04-12 в 01 05 49" src="https://github.com/user-attachments/assets/65743d19-b886-405b-81c2-9a91aeb2ea77" />
 
 Просмотр статистики по базам данных:
 
+<img width="949" alt="Снимок экрана 2025-04-12 в 01 15 27" src="https://github.com/user-attachments/assets/0907a38c-55bb-4944-a766-57d82a7a468f" />
 
 Завершение зависшего процесса:\
 SELECT pg_terminate_backend(<pid>);
